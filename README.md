@@ -8,7 +8,7 @@
 ## Lancement de PowerShell ISE
 1. Appuyez sur la touche Windows
 2. Recherchez PowerShell ISE et l'exécutez en administrateur 
-3. La première fois, rentrez la commande Set-ExecutionPolicy Unrestricred 
+3. La première fois, rentrez la commande Set-ExecutionPolicy Unrestricted 
 4. Validez avec T
 
 ## Ouverture des Scripts Téléchargés
