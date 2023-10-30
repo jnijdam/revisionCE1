@@ -6,8 +6,10 @@
 4. Cliquez-droit sur le fichier ZIP, puis sélectionnez Extraire tout... et suivez les instructions pour extraire les fichiers à l'emplacement souhaité sur votre ordinateur.
 
 ## Lancement de PowerShell ISE
-1. Appuyez sur la touche Win + R pour ouvrir la boîte de dialogue Exécuter.
-2. Tapez powershell_ise dans la boîte de dialogue et appuyez sur Enter ou cliquez sur OK.
+1. Appuyez sur la touche Windows
+2. Recherchez PowerShell ISE et l'exécutez en administrateur 
+3. La première fois, rentrez la commande Set-ExecutionPolicy Unrestricred 
+4. Validez avec T
 
 ## Ouverture des Scripts Téléchargés
 1. Dans PowerShell ISE, cliquez sur File dans la barre de menu.
