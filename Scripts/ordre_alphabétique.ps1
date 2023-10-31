@@ -6,9 +6,32 @@ $score = 0
 $round = 0
 
 # Liste des mots
-$words = "abricot", "banane", "cerise", "datte", "framboise", "grenade", "kiwi", "litchi", "mangue", "nectarine", "olive", "pomme", "raisin", "tangerine", "uma", "vanille", "wakame", "xérès", "yuzu", "zatte",
-          "balançoire", "bonbon", "câlin", "doudou", "école", "fable", "goûter", "histoire", "île", "jouet", "kermesse", "luge", "manège", "nounou", "ours", "poupée", "quenotte", "récréation", "sucette", "tricycle",
-          "arithmétique", "bureau", "cahier", "dictée", "équerre", "fournitures", "géométrie", "instituteur", "jeu", "leçon", "maîtresse", "numération", "orthographe", "poésie", "question", "réponse", "salle", "tableau", "univers", "vocabulaire"
+$words = "abri", "abricot", "acacia", "armistice", "arithmétique", "arme",
+         "baba", "balançoire", "ballon", "banal", "banane", "barbe", "bombonière", "bonbon", "bongo", "bruit", "bureau", "burin",
+         "cabine", "câlin", "camelot", "cahier", "calibre", "céréale", "cerise", "chaise",
+         "dicter", "dictée", "diesel", "doublon", "doudou", "douleur", "datte", "dé",
+         "écaille", "école", "écorce", "écrit", "équerre", "équilibre",
+         "fabuleux", "fable", "face", "fourmi", "fournitures", "fourreau", "fragon", "framboise", "frein",
+         "gémir", "géométrie", "géranium", "goudron", "goûter", "gourmet", "grenadine", "grenade", "grippe",
+         "histogramme", "histoire", "hiver",
+         "ile", "image", "instruction", "instituteur", "intégral",
+         "jeter", "jeu", "jeune", "joue", "jouet", "jouissance",
+         "kermes", "kermesse", "kilo", "klaxon",
+         "laconique", "leçon", "lecteur", "lentille", "litchi", "livre", "lucide", "luge", "lumière",
+         "macadam", "maîtresse", "malade", "maman", "manège", "manifeste", "mangue", "manioc", "marionnette",
+         "narine", "nectarine", "néon", "nougat", "nounou", "nourriture", "numéraire", "numération", "numéro",
+         "oie", "olive", "onde", "orthodoxe", "orthographe", "osier", "ours", "outrage",
+         "papillon", "piano", "plaisir", "poker", "pomme", "porc", "poupon", "poupée", "poussière", "poésie", "point",
+         "québec", "quenotte", "queue", "quête", "question", "quille",
+         "raison", "raisin", "râteau", "récit", "réactif", "récréation", "réflexion", "réponse", "résine",
+         "sacoche", "salle", "salon", "succion", "sucette", "sucré",
+         "tabac", "tableau", "tablette", "talon", "tangerine", "tapis", "travail", "tricycle", "trivial",
+         "ultra", "uma", "uranium", "un", "univers", "unité",
+         "vache", "vanille", "vapeur", "vocal", "vocabulaire", "vocation",
+         "wagon", "wakame", "watt",
+         "xylophone", "xérès", "xyleme",
+         "yacht", "yuzu", "yoga",
+         "zapper", "zatte", "zen"
 
 
 # Fonction pour démarrer un nouveau tour
