@@ -17,6 +17,7 @@ Function New-Question {
     } else {
         $Label.Content = "Final Score: $script:score/10"
         $TextBox.IsEnabled = $false
+        $ReplayButton.Visibility = "Visible"  # Affiche le bouton lorsque le jeu est terminé
     }
 }
 
@@ -58,6 +59,18 @@ $StackPanel.AddChild($Label)
 $StackPanel.AddChild($TextBox)
 $StackPanel.AddChild($Result)
 $Window.Content = $StackPanel
+$ReplayButton = New-Object System.Windows.Controls.Button
+$ReplayButton.Content = "Encore"
+$ReplayButton.Visibility = "Collapsed"  # Cache le bouton jusqu'à ce que le jeu soit terminé
+$StackPanel.AddChild($ReplayButton)  # Ajoutez cette ligne après la création du StackPanel et avant l'affichage de la première question.
+
+$ReplayButton.Add_Click({
+    $script:score = 0
+    $script:count = 0
+    $TextBox.IsEnabled = $true
+    $ReplayButton.Visibility = "Collapsed"
+    New-Question
+})
 
 # Affichage de la première question
 New-Question

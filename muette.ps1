@@ -84,6 +84,7 @@ function Check-Answer {
     } else {
         $global:label.Content = "Jeu terminé ! Votre score est $global:score sur 10."
         $global:textBox.IsEnabled = $false
+        $ReplayButton.Visibility = "Visible"  # Affiche le bouton lorsque le jeu est terminé
     }
 }
 
@@ -117,6 +118,19 @@ $labelResult.FontSize = 20
 $stackPanel.AddChild($labelResult)
 
 $mainForm.Content = $stackPanel
+
+$ReplayButton = New-Object System.Windows.Controls.Button
+$ReplayButton.Content = "Encore"
+$ReplayButton.Visibility = "Collapsed"  # Cache le bouton jusqu'à ce que le jeu soit terminé
+$StackPanel.AddChild($ReplayButton)  # Ajoutez cette ligne après la création du StackPanel et avant l'affichage de la première question.
+
+$ReplayButton.Add_Click({
+    $script:score = 0
+    $script:count = 0
+    $TextBox.IsEnabled = $true
+    $ReplayButton.Visibility = "Collapsed"
+    New-Question
+})
 
 # Démarrer le premier tour et afficher le formulaire
 New-Round
