@@ -102,7 +102,7 @@ function Restart-Game {
 # Créer et configurer le formulaire principal
 $mainForm = New-Object System.Windows.Window
 $mainForm.Title = "Nom Commun ou Nom Propre"
-$mainForm.Width = 400
+$mainForm.Width = 500
 $mainForm.Height = 250
 
 # Créer et configurer les contrôles
