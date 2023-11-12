@@ -22,9 +22,17 @@ function New-Round {
     } else {
         $global:labelResult.Content = "Jeu terminé ! Votre score est $global:score sur 10."
         $global:textBox.IsEnabled = $false
+        $global:ReplayButton.Visibility = "Visible"  # Affiche le bouton 'Encore'
     }
 }
-
+# Fonction pour redémarrer le jeu
+function Restart-Game {
+    $global:score = 0
+    $global:round = 0
+    $global:textBox.IsEnabled = $true
+    $global:ReplayButton.Visibility = "Collapsed"
+    New-Round
+}
 # Fonction pour vérifier la réponse
 function Check-Answer {
     $answer = $global:textBox.Text.Trim()
@@ -40,7 +48,7 @@ function Check-Answer {
 # Créer et configurer le formulaire principal
 $mainForm = New-Object System.Windows.Window
 $mainForm.Title = "Guess the Color"
-$mainForm.Width = 400
+$mainForm.Width = 500
 $mainForm.Height = 300
 $mainForm.ResizeMode = "CanResizeWithGrip"
 
@@ -75,6 +83,14 @@ $stackPanel.AddChild($rectangle)
 
 # Ajouter le StackPanel au formulaire principal
 $mainForm.Content = $stackPanel
+
+# Ajouter le bouton 'Encore' pour redémarrer le jeu
+$ReplayButton = New-Object System.Windows.Controls.Button
+$ReplayButton.Content = "Encore"
+$ReplayButton.FontSize = 16
+$ReplayButton.Visibility = "Collapsed"  # Le bouton est masqué jusqu'à la fin du jeu
+$ReplayButton.Add_Click({ Restart-Game })
+$stackPanel.AddChild($ReplayButton)
 
 # Démarrer le premier tour et afficher le formulaire
 New-Round
