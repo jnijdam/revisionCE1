@@ -31,7 +31,6 @@ $Phrases = @(
     @{ Phrase="Un oiseau chante à l'aube."; Nom="Commun" },
     @{ Phrase="Martin et Lucie vont à l'école ensemble."; Nom="Propre" },
     @{ Phrase="Le soleil se lève à l'est."; Nom="Commun" },
-    @{ Phrase="Le musée d'Orsay expose de nombreuses œuvres d'art."; Nom="Propre" },
     @{ Phrase="Un livre repose sur l'étagère."; Nom="Commun" },
     @{ Phrase="Sophie travaille au café du coin."; Nom="Propre" },
     @{ Phrase="La lune était pleine hier soir."; Nom="Commun" },
