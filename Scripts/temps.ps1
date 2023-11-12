@@ -94,7 +94,7 @@ function Restart-Game {
 # Créer et configurer le formulaire principal
 $mainForm = New-Object System.Windows.Window
 $mainForm.Title = "Identifier le temps verbal"
-$mainForm.Width = 350
+$mainForm.Width = 500
 $mainForm.Height = 200
 
 # Créer et configurer les contrôles
