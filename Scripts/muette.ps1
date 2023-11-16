@@ -57,7 +57,17 @@ $Mots = @(
     @{ Mot="Jardin"; Muette="" },
     @{ Mot="Koala"; Muette="" },
     @{ Mot="Oiseau"; Muette="" },
-    @{ Mot="Piano"; Muette="" }
+    @{ Mot="Piano"; Muette="" },
+    @{ Mot="Blanc"; Muette="c" },
+    @{ Mot="Estomac"; Muette="c" },
+    @{ Mot="Tabac"; Muette="c" },
+    @{ Mot="Scène"; Muette="c" },
+    @{ Mot="Coup"; Muette="p" },
+    @{ Mot="Trop"; Muette="p" },
+    @{ Mot="Beaucoup"; Muette="p" },
+    @{ Mot="Sirop"; Muette="p" },
+    @{ Mot="Drap"; Muette="p" },
+    @{ Mot="Loup"; Muette="p" }
 )
 
 
