@@ -19,7 +19,7 @@
 ## Exécution des Scripts
 1. Assurez-vous que le script est ouvert dans l'éditeur.
 2. Cliquez sur le bouton Run Script (icône en forme de triangle vert) dans la barre d'outils, ou appuyez sur F5 sur votre clavier pour exécuter le script.
-3. Une fois le script lancé, lenfant peut directement saisir les réponses puis taper sur "Entrée" pour valider
+3. Une fois le script lancé, l'enfant peut directement saisir les réponses puis taper sur "Entrée" pour valider
 
 ## Support
 Si vous rencontrez des problèmes ou avez des questions, n'hésitez pas à ouvrir une issue sur ce dépôt GitHub.
