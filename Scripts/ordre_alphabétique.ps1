@@ -1,11 +1,4 @@
-﻿# Importer la bibliothèque nécessaire pour l'interface graphique
-Add-Type -AssemblyName System.Windows.Forms
-
-# Initialiser les variables globales
-$score = 0
-$round = 0
-
-# Liste des mots
+﻿# Liste des mots
 $words = "abri", "abricot", "acacia", "armistice", "arithmétique", "arme",
          "baba", "balançoire", "ballon", "banal", "banane", "barbe", "bombonière", "bonbon", "bongo", "bruit", "bureau", "burin",
          "cabine", "câlin", "camelot", "cahier", "calibre", "céréale", "cerise", "chaise",
@@ -34,11 +27,17 @@ $words = "abri", "abricot", "acacia", "armistice", "arithmétique", "arme",
          "zapper", "zatte", "zen"
 
 
+# Importer la bibliothèque nécessaire pour l'interface graphique
+Add-Type -AssemblyName System.Windows.Forms
+
+# Initialiser les variables globales
+$score = 0
+$round = 0
+
 # Fonction pour démarrer un nouveau tour
 function New-Round {
     $global:word1 = $words | Get-Random
     $global:word2 = $words | Get-Random
-    # Assurez-vous que les deux mots sont différents
     while ($global:word1 -eq $global:word2) {
         $global:word2 = $words | Get-Random
     }
@@ -70,7 +69,7 @@ function Check-Answer {
     } else {
         $global:label.Text = "Jeu terminé ! Votre score est $global:score sur 10."
         $global:textBox.Enabled = $false
-        $ReplayButton.Visibility = "Visible"  # Affiche le bouton lorsque le jeu est terminé
+        $ReplayButton.Visible = $true
     }
 }
 
@@ -84,13 +83,13 @@ $mainForm.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::Sizable
 $label = New-Object System.Windows.Forms.Label
 $label.Location = New-Object System.Drawing.Point(10,10)
 $label.Size = New-Object System.Drawing.Size(560,120)
-$label.Font = New-Object System.Drawing.Font($label.Font.FontFamily, 20)
+$label.Font = New-Object System.Drawing.Font($label.Font.FontFamily, 16)
 $mainForm.Controls.Add($label)
 
 $textBox = New-Object System.Windows.Forms.TextBox
-$textBox.Location = New-Object System.Drawing.Point(10,140)
+$textBox.Location = New-Object System.Drawing.Point(10,200)
 $textBox.Size = New-Object System.Drawing.Size(560,40)
-$textBox.Font = New-Object System.Drawing.Font($textBox.Font.FontFamily, 20)
+$textBox.Font = New-Object System.Drawing.Font($textBox.Font.FontFamily, 16)
 $textBox.Add_KeyPress({
     if ($_.KeyChar -eq [System.Windows.Forms.Keys]::Enter) {
         $_.Handled = $true
@@ -100,22 +99,25 @@ $textBox.Add_KeyPress({
 $mainForm.Controls.Add($textBox)
 
 $labelResult = New-Object System.Windows.Forms.Label
-$labelResult.Location = New-Object System.Drawing.Point(10,190)
+$labelResult.Location = New-Object System.Drawing.Point(10,250)
 $labelResult.Size = New-Object System.Drawing.Size(560,120)
 $labelResult.Font = New-Object System.Drawing.Font($labelResult.Font.FontFamily, 20)
 $mainForm.Controls.Add($labelResult)
-$ReplayButton = New-Object System.Windows.Controls.Button
-$ReplayButton.Content = "Encore"
-$ReplayButton.Visibility = "Collapsed"  # Cache le bouton jusqu'à ce que le jeu soit terminé
-$StackPanel.AddChild($ReplayButton)  # Ajoutez cette ligne après la création du StackPanel et avant l'affichage de la première question.
 
+# Créer et configurer le bouton Replay
+$ReplayButton = New-Object System.Windows.Forms.Button
+$ReplayButton.Text = "Encore"
+$ReplayButton.Location = New-Object System.Drawing.Point(10,380)
+$ReplayButton.Size = New-Object System.Drawing.Size(100,40)
+$ReplayButton.Visible = $false
 $ReplayButton.Add_Click({
     $script:score = 0
-    $script:count = 0
-    $TextBox.IsEnabled = $true
-    $ReplayButton.Visibility = "Collapsed"
-    New-Question
+    $script:round = 0
+    $textBox.Enabled = $true
+    $ReplayButton.Visible = $false
+    New-Round
 })
+$mainForm.Controls.Add($ReplayButton)
 
 # Démarrer le premier tour et afficher le formulaire
 New-Round
