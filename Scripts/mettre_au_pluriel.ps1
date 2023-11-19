@@ -91,7 +91,7 @@ function Restart-Game {
             $global:labelResult.Content = "Correct !"
             $global:score++
         } else {
-            $global:labelResult.Content = "Incorrect ! La bonne réponse était $($global:correctAnswer)."
+            $global:labelResult.Content = "Incorrect ! La bonne réponse était $($global:correctAnswer).`nVous avez répondu $userAnswer"
         }
 
     if ($global:round -lt 10) {

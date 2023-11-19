@@ -63,7 +63,7 @@ Function Check-Answer {
         $Result.Content = "Correct!"
     } else {
         $randomNumberInWords = (ConvertTo-Words -number $script:randomNumber)
-        $Result.Content = "Incorrect! La réponse correcte est : $script:randomNumber et non $userInputNumber."
+        $Result.Content = "Incorrect! La réponse correcte est : $script:randomNumber . `nVous avez répondu $userInputNumber."
     }
     New-Question
 }

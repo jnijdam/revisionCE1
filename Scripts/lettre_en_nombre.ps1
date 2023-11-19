@@ -61,7 +61,7 @@ Function Check-Answer {
         $script:score++
         $Result.Content = "Correct!"
     } else {
-        $Result.Content = "Incorrect! La réponse correcte est : $randomNumberInWords et non $userInputWords."
+        $Result.Content = "Incorrect! La réponse correcte est : $randomNumberInWords .`nVous avez répondu $userInputWords."
     }
     New-Question
 }

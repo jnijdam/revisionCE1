@@ -134,7 +134,7 @@ function OnSubmit {
         $global:score++
         $feedback.Text = "Correct!"
     } else {
-        $feedback.Text = "Incorrect! Le verbe est: $($phrases[$index].Verb), position: $verbPosition"
+        $feedback.Text = "Incorrect! Le verbe est: $($phrases[$index].Verb), position: $verbPosition. `nVous avez répondu $userInput"
     }
 
     if ($global:tries -eq 10) {

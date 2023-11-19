@@ -29,7 +29,7 @@ Function Check-Answer {
         $script:score++
         $Result.Content = "Correct!"
     } else {
-        $Result.Content = "Incorrect! La réponse à $script:num1 + $script:num2 était $correctAnswer et non $answer."
+        $Result.Content = "Incorrect! La réponse à $script:num1 + $script:num2 était $correctAnswer. `nVous avez répondu $answer."
     }
     New-Question
 }

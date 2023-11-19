@@ -70,7 +70,7 @@ function Check-Answer {
         $global:labelResult.Content = "Correct !"
         $global:score++
     } else {
-        $global:labelResult.Content = "Incorrect. La phrase est au $global:tense."
+        $global:labelResult.Content = "Incorrect. La phrase est au $global:tense. `nVous avez répondu $answer"
     }
 
     if ($global:round -lt 10) {
