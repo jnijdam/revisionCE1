@@ -4,6 +4,8 @@ Add-Type -AssemblyName PresentationFramework
 # Initialisation des variables
 $score = 0
 $count = 0
+# Initialiser la liste des erreurs
+$global:errors = New-Object System.Collections.Generic.List[Object]
 
 # Fonction pour générer une nouvelle question
 Function New-Question {
@@ -15,9 +17,13 @@ Function New-Question {
         $TextBox.Text = ""
         $TextBox.Focus()
     } else {
-        $Label.Content = "Final Score: $script:score/10"
+        $Label.Content = "Jeu terminé ! Votre score est $global:score sur 10."
         $TextBox.IsEnabled = $false
         $ReplayButton.Visibility = "Visible"  # Affiche le bouton lorsque le jeu est terminé
+        if ($global:errors.Count -gt 0) {
+            $errorMessages = $global:errors -join "`n"
+            [System.Windows.MessageBox]::Show("Récapitulatif des erreurs :`n$errorMessages", "Récapitulatif des Erreurs")
+        }
     }
 }
 
@@ -29,6 +35,8 @@ Function Check-Answer {
         $script:score++
         $Result.Content = "Correct!"
     } else {
+        $errorMessage = "Erreur à la question $script:num1 + $script:num2 - Réponse attendue: $correctAnswer, Votre réponse: $answer"
+        $global:errors.Add($errorMessage)
         $Result.Content = "Incorrect! La réponse à $script:num1 + $script:num2 était $correctAnswer. `nVous avez répondu $answer."
     }
     New-Question
